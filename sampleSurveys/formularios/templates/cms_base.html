@@ -2,10 +2,12 @@
 <html>
   <head>
       <title>{% page_attribute "page_title" %}</title>
+      {% render_block "css" postprocessor "compressor.contrib.sekizai.compress" %}
   </head>
   <body>
       {% cms_toolbar %}
       {% placeholder cms_base_content %}
       {% block base_content %}{% endblock %}
+      {% render_block "js" postprocessor "compressor.contrib.sekizai.compress" %}
   </body>
 </html>
